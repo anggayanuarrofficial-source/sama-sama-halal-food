@@ -57,7 +57,7 @@ export default function Location() {
     return () => ctx.revert();
   }, []);
 
-  const mapEmbedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.537416547316!2d136.9043!3d35.1645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377446564c5e7%3A0x20c9e7d3e3f5e5e5!2sSakae%2C%20Naka%20Ward%2C%20Nagoya%2C%20Aichi!5e0!3m2!1sen!2sjp!4v1700000000000!5m2!1sen!2sjp`;
+  const mapEmbedUrl = `https://www.google.com/maps?q=%E3%80%92460-0008+%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E6%A0%843%E4%B8%81%E7%9B%AE9-1+%E6%9D%B1%E5%92%8C%E4%BD%8F%E5%90%89%E3%83%93%E3%83%AB%E5%8C%97%E9%A4%A8+2F&output=embed&hl=ja`;
 
   return (
     <section
@@ -97,7 +97,7 @@ export default function Location() {
                     東和住吉ビル北館 2F
                   </p>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=SAMA-SAMA+Halal+Food+Nagoya"
+                    href="https://maps.app.goo.gl/83bxGuYZ5CMDFgrE6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 mt-3 font-body text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors"

@@ -13,7 +13,10 @@ export default function WhatsAppButton() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const whatsappNumber = '8190123456789'; // Placeholder
+  // TODO: ganti dengan nomor WhatsApp toko, format internasional tanpa + dan tanpa 0
+  //       contoh Jepang: 819012345678
+  const whatsappNumber = '';
+  const hasWhatsapp = whatsappNumber.length > 0;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Halo%20SAMA-SAMA!%20Saya%20ingin%20reservasi%20meja.`;
 
   return (
@@ -49,18 +52,20 @@ export default function WhatsAppButton() {
             </p>
           </div>
         </div>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white font-body text-sm font-medium py-3 rounded-xl transition-colors"
-        >
-          <MessageCircle className="w-4 h-4" />
-          WhatsApp
-        </a>
+        {hasWhatsapp && (
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white font-body text-sm font-medium py-3 rounded-xl transition-colors"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp
+          </a>
+        )}
         <a
           href="tel:052-242-1220"
-          className="flex items-center justify-center gap-2 w-full mt-2 bg-wood-100 hover:bg-wood-200 text-wood-800 font-body text-sm font-medium py-3 rounded-xl transition-colors"
+          className={`flex items-center justify-center gap-2 w-full ${hasWhatsapp ? 'mt-2 bg-wood-100 hover:bg-wood-200 text-wood-800' : 'bg-emerald-500 hover:bg-emerald-600 text-white'} font-body text-sm font-medium py-3 rounded-xl transition-colors`}
         >
           <Phone className="w-4 h-4" />
           Telepon

@@ -1,5 +1,5 @@
 import { useLanguage } from '@/context/LanguageContext';
-import { MapPin, Phone, Clock, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, MessageCircle } from 'lucide-react';
 
 const navLinks = [
   { key: 'nav.home', href: '#home' },
@@ -9,6 +9,10 @@ const navLinks = [
   { key: 'nav.reviews', href: '#reviews' },
   { key: 'nav.contact', href: '#contact' },
 ];
+
+const INSTAGRAM_URL = 'https://www.instagram.com/samasamahalal/';
+// TODO: isi nomor WhatsApp toko (format internasional, tanpa + dan tanpa 0). Contoh: '819012345678'
+const WHATSAPP_NUMBER = '';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -114,23 +118,25 @@ export default function Footer() {
             </h4>
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram SAMA-SAMA Halal Food"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all"
               >
                 <Instagram className="w-4 h-4" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all"
-              >
-                <MessageCircle className="w-4 h-4" />
-              </a>
+              {WHATSAPP_NUMBER && (
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp SAMA-SAMA Halal Food"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         </div>
